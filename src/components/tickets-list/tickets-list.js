@@ -57,11 +57,11 @@ const TicketsList = () => {
     <ul className={ticketList}>
       {transferState.loading ? <Spinner /> : null}
       {transferState.error && viewTickets.length === 0 ? <li>{'Билеты не найдены, повторите попытку'}</li> : null}
-      {(viewTickets.length !== 0 && !transferState.loading) || !transferState.error ? (
+      {viewTickets.length !== 0 ? (
         viewTickets.slice(0, slicedCounter)
-      ) : (
+      ) : !transferState.loading && !transferState.error ? (
         <li>{'По заданному фильтру, билетов не найдено.'}</li>
-      )}
+      ) : null}
       {slicedCounter < viewTickets.length ? (
         <button className={ticketList__button} onClick={() => dispatch({ type: 'SLICED_COUNTER' })}>
           Показать еще 5 билетов!
