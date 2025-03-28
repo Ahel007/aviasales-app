@@ -1,0 +1,69 @@
+.ticket {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr repeat(2, 0.5fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+  padding: 20px;
+
+  @media (max-width: 430px) {
+    grid-column-gap: 5px;
+  }
+
+  .price {
+    grid-area: 1 / 1 / 2 / 3;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 140%;
+    color: #2196f3;
+    @media (max-width: 430px) {
+      font-size: 20px;
+    }
+  }
+  .carrier {
+    grid-area: 1 / 3 / 2 / 4;
+    text-align: end;
+  }
+  .there__cities {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .there__duration {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+  .there__stops {
+    grid-area: 2 / 3 / 3 / 4;
+  }
+  .back__cities {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  .back__duration {
+    grid-area: 3 / 2 / 4 / 3;
+  }
+  .back__stops {
+    grid-area: 3 / 3 / 4 / 4;
+  }
+  p {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 150%;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #a0b0b9;
+    margin: 0;
+    @media (max-width: 430px) {
+      font-size: 10px;
+    }
+  }
+  span {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    color: #4a4a4a;
+    @media (max-width: 430px) {
+      font-size: 12px;
+    }
+  }
+}
